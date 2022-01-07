@@ -8,7 +8,7 @@ RegisterNetEvent("moneywash:server:checkInv", function()
     local markedbills = Player.Functions.GetItemByName('markedbills')
     local amt = Player.Functions.GetItemByName('markedbills').amount
     local worth = markedbills.info.worth
-    if markedbills ~= nil then
+    if Player.Functions.GetItemByName('markedbills') ~= nil then
         if amt <= 1 then
             Player.Functions.RemoveItem('markedbills', amt)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "remove")
